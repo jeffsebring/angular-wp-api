@@ -18,15 +18,11 @@ window.wp = window.wp || {};
 
 wp.api = wp.api || angular.module( 'wp.api', [ 'ngResource' ] )
  
-	// Main API resource
+	// API resource
 	.factory( 'wpAPIResource', [ '$resource', function ( $resource ) {
 
 		return $resource( 
-			wpAPIData.base + ':route',
-			{
-				get: {
-					isArray: false
-				}
-			}
-		 );
-	}])
+			wpAPIData.base + '/:param1/:param2/:param3/:param4/:param5/:param6/:param7/'
+		);
+
+	}]);

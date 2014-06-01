@@ -11,13 +11,6 @@ This library provides an [AngularJS](https://angularjs.org/) client-side interfa
 
 **There is also a [Backbone.js WP-API client](https://github.com/WP-API/client-js).**
 
-## Resource List
-
-* `wpAPIInfoResource` - Requests API and blog data from the api base url.
-* `wpAPIUserResource` - Requests User data.
-
-*More will be added as needed . .*
-
 ## Dependencies
 
 Aside from AngularJS, this module relies on [ngResource](https://github.com/angular/bower-angular-resource), a separate AngularJS module, to create API resources for your apps. This is a separate script you will need to include.
@@ -84,11 +77,18 @@ The resources rely on localized data injected into the footer of the page, with 
 
 ### Getting Data
 
+The resource takes 7 parameters ( the depth of WP-API's routing ) to designate the API route:
+
+```
+/:param1/:param2/:param3/:param4/:param5/:param6/:param7/
+```
+
+#### Examples
+
 This is an example of requesting base API information:
 
-
 ```javascript
-wpAPIInfoResource.get( {
+wpAPIResource.get( {
 	_wp_json_nonce: wpAPIData.nonce
 } );
 ```
@@ -96,13 +96,54 @@ wpAPIInfoResource.get( {
 A request for the current user data:
 
 ```javascript
-wpAPIUserResource.get( {
-	id: wpAPIData.user_id,
+wpAPIResource.get( {
+	param1: 'users',
+	param2: wpAPIData.user_ud,
+	_wp_json_nonce: wpAPIData.nonce
+} );
+```
+** If the user is not logged in, the request will recieve a `403 Forbidden` response.
+
+A single post request:
+
+```javascript
+wpAPIResource.get( {
+	param1: 'posts',
+	param2: 1,
+	_wp_json_nonce: wpAPIData.nonce
+} );
+```
+A post loop request:
+
+```javascript
+wpAPIResource.query( {
+	param1: 'posts',
 	_wp_json_nonce: wpAPIData.nonce
 } );
 ```
 
-** If the user is not logged in, the request will recieve a `403 Forbidden` response.
+A request for registered post types:
+
+```javascript
+wpAPIResource.query( {
+	param1: 'posts',
+	param2: 'types',
+	_wp_json_nonce: wpAPIData.nonce
+} );
+```
+
+A request for data about the attachment post type:
+
+```javascript
+wpAPIResource.query( {
+	param1: 'posts',
+	param2: 'types',
+	param3: 'attachment',
+	_wp_json_nonce: wpAPIData.nonce
+} );
+```
+
+The ngResource method `.get()`, should be used for requesting single objects, as it expects an object to be returned. When requesting a collection, use `query()`, which expects an array.
 
 
 ## Development
