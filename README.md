@@ -1,13 +1,13 @@
 AngularJS Module for WP-API
 ============================
 
+**There is also a [Backbone.js WP-API client](https://github.com/WP-API/client-js).**
+
 This library provides an [AngularJS](https://angularjs.org/) client-side interface for the [WP API Plugin](https://github.com/WP-API/WP-API) for [WordPress](http://wordpress.org).
 
 * Author - [Jeff Sebring](http://jeffsebring.com)
 * License - [GPLv3](http://www.gnu.org/licenses/gpl-3.0.html)
 
-
-**There is also a [Backbone.js WP-API client](https://github.com/WP-API/client-js).**
 
 ## Dependencies
 
