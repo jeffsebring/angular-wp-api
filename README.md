@@ -27,7 +27,40 @@ Aside from AngularJS, this module relies on [ngResource](https://github.com/angu
 
 ## Use
 
-### Add dependency
+### Set theme support
+
+** You can skip this if you are bundling the script with your app using grunt or other methods. 
+
+To include the script using the plugin, you'll just add a snippet to your theme or plugin which will use it.
+
+There is one required parameter, and 2 optional configuration parameters. Here is the minimal code to enable the script:
+
+```
+add_theme_support( 'angular-wp-api' );
+```
+
+The first parameter designates what to support using a string - `angular-wp-api`.
+
+The second parameter is the script dependency array. This is used to control where the script is enqueued, to ensure it has AngularJS and ngResource available, and that the script itself is available for your app.
+
+The third parameter is an optional array of data to be localized with the script.
+
+```
+add_theme_support( 'angular-wp-api',
+	array(
+		'mytheme-angular'
+	),
+	array(
+		'data' => 'this is some data',
+		'moredata' => 'more data wheee'
+	)
+);
+```
+
+Now that you have set the dependency of the angular-wp-api script, add `angular-wp-api` as a dependency of your app scripts.
+
+
+### `wp.api` in your Modules
 
 To provide access to API resources, include `wp.api` in the dependency array of your module definition.
 
