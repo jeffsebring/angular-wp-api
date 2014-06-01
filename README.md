@@ -22,7 +22,7 @@ This library provides an [AngularJS](https://angularjs.org/) client-side interfa
 
 Aside from AngularJS, this module relies on [ngResource](https://github.com/angular/bower-angular-resource), a separate AngularJS module, to create API resources for your apps. This is a separate script you will need to include.
 
-You will need to [enqueue](http://codex.wordpress.org/Function_Reference/wp_enqueue_script) AngularJS in your theme or plugin, and also have the WP-API plugin activated.
+You will need to [enqueue](http://codex.wordpress.org/Function_Reference/wp_enqueue_script) AngularJS in your theme or plugin, and have the WP-API plugin activated.
 
 
 ## Use
