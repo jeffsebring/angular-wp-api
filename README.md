@@ -83,6 +83,8 @@ The resource takes 7 parameters ( the depth of WP-API's routing ) to designate t
 /:param1/:param2/:param3/:param4/:param5/:param6/:param7/
 ```
 
+Additional parameters are added to the query string by ngResource.
+
 #### Examples
 
 This is an example of requesting base API information:
@@ -118,6 +120,15 @@ A post loop request:
 ```javascript
 wpAPIResource.query( {
 	param1: 'posts',
+	_wp_json_nonce: wpAPIData.nonce
+} );
+```
+A post loop request for page 3 of posts:
+
+```javascript
+wpAPIResource.query( {
+	param1: 'posts',
+	page: 3,
 	_wp_json_nonce: wpAPIData.nonce
 } );
 ```
