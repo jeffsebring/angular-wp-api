@@ -40,15 +40,15 @@ function angular_wp_api_scripts() {
 		$script_data = $config[ 1 ];
 
 	// Data for localization
-	$data[ 'base' ] = json_url();
-	$data[ 'nonce' ] = wp_create_nonce( 'wp_json' );
+	$script_data[ 'base' ] = json_url();
+	$script_data[ 'nonce' ] = wp_create_nonce( 'wp_json' );
 
 	// Provide user id if logged in
 	if ( is_user_logged_in() )
-		$data[ 'user_id' ] = get_current_user_id();
+		$script_data[ 'user_id' ] = get_current_user_id();
 
 	else
-		$data[ 'user_id' ] = 0;
+		$script_data[ 'user_id' ] = 0;
 
 	// Enqueue the script after dependecy, in the footer
 	wp_enqueue_script( 'angular-wp-api',
