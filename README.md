@@ -1,8 +1,6 @@
 AngularJS Module for WP-API
 ============================
 
-**This is a very limited alpha version. Use it as an example, or add to it.**
-
 This library provides an [AngularJS](https://angularjs.org/) client-side interface for the [WP API Plugin](https://github.com/WP-API/WP-API) for [WordPress](http://wordpress.org).
 
 * Author - [Jeff Sebring](http://jeffsebring.com)
