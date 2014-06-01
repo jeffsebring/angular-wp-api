@@ -48,6 +48,8 @@ add_theme_support( 'angular-wp-api',
 );
 ```
 
+Script dependencies can also be modified with the `angular_wp_api_script_dependencies` filter.
+
 Now that you have set the dependency of the angular-wp-api script, add `angular-wp-api` as a dependency of your app scripts to make sure it is accessable. If you get error messages in the console about missing objects, check this.
 
 ### Bundling
@@ -72,6 +74,8 @@ The resources rely on localized data injected into the footer of the page, with 
 * `base`: JSON API url, provided by the `json_url()` function.
 * `nonce`: JSON API nonce sent with requests, and used for authorization.
 * `user_id`: Current user ID if logged in. Users not logged will have an ID of 0 for utility.
+
+Local data can be added either the theme support as described above, or using the `angular_wp_api_local_data` filter.
 
 ### Getting Data
 
