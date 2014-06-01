@@ -8,6 +8,8 @@
  * Author URI: https://jeffsebring.com
  */
 
+defined( 'ABSPATH' ) || die;
+
 if ( ! function_exists( 'angular_wp_api_scripts' ) ) :
 
 /**
@@ -15,7 +17,21 @@ if ( ! function_exists( 'angular_wp_api_scripts' ) ) :
  */
 function angular_wp_api_scripts() {
 
-	// Minified or debug mode
+	// quit if not specifically requested from the theme or a plugin
+	if ( ! $config = get_theme_support( 'angular-wp-api' ) )
+		return;
+
+	// Array of dependencies for the
+	$script_dependencies = null;
+	$script_data = null;
+
+	// Script dependency from theme support
+	if ( isset( $config[ 0 ] ) )
+		$script_dependencies = $config[ 0 ];
+
+	// Script data from theme support
+	if ( isset( $config[ 1 ] ) )
+		$script_data = $config[ 1 ];
 
 	// Data for localization
 	$data[ 'base' ] = json_url();
@@ -28,10 +44,10 @@ function angular_wp_api_scripts() {
 	else
 		$data[ 'user_id' ] = 0;
 
-	// Enqueue the script
+	// Enqueue the script after dependecy, in the footer
 	wp_enqueue_script( 'angular-wp-api',
 		plugins_url( 'angular-wp-api.min.js', __FILE__ ),
-		apply_filters( 'angular_wp_api_script_dependencies', null ),
+		apply_filters( 'angular_wp_api_script_dependencies', $script_dependencies ),
 		'',
 		true
 	);
@@ -40,12 +56,12 @@ function angular_wp_api_scripts() {
 	wp_localize_script(
 		'angular-wp-api',
 		'wpAPIData',
-		apply_filters( 'angular_wp_api_local_data', $data )
+		apply_filters( 'angular_wp_api_local_data', $script_data )
 	);
 
 }
+
+// Hook `angular_wp_api_scripts` the `wp_enqueue_scripts` action
 add_action( 'wp_enqueue_scripts', 'angular_wp_api_scripts' );
 
-
 endif;
-
