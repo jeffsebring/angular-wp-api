@@ -64,7 +64,7 @@ Now that you have set the dependency of the angular-wp-api script, add `angular-
 If you would like to include the module in your scripts for concatentation with grunt or otherwise, you'll need to localize some data from within WordPress. See the `plugin.php` file for an example.
 
 
-### Use
+## Use
 
 ### `wp.api` in your Modules
 
