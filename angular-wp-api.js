@@ -24,7 +24,7 @@ wp.api = wp.api || angular.module( 'wp.api', [ 'ngResource' ] )
 		return $resource( 
 			wpAPIData.base,
 			{
-				get:  {
+				get: {
 					isArray: false,
 					cache : true
 				}
@@ -38,12 +38,10 @@ wp.api = wp.api || angular.module( 'wp.api', [ 'ngResource' ] )
 		return $resource( 
 			wpAPIData.base + '/users/:id',
 			{
-				get:  {
+				get: {
 					isArray: false,
 					cache : true
 				}
 			}
 		);
-	}]); 
-
-console.log( wp );
+	}]);
