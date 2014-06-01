@@ -146,7 +146,7 @@ wpAPIResource.query( {
 } );
 ```
 
-The ngResource method `.get()`, should be used for requesting single objects, as it expects an object to be returned. When requesting a collection, use `query()`, which expects an array.
+The ngResource method `.get()`, should be used for requesting single objects/entities, as it expects an object to be returned. When requesting a loop/collection, use `query()`, which expects an array.
 
 
 ## Development
