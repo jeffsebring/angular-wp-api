@@ -33,7 +33,6 @@ To provide access to API resources, include `wp.api` in the dependency array of 
 
 ```javascript
 angular.module( 'myApp', [ 'wp.api' ] );
-
 ```
 
 
@@ -54,7 +53,6 @@ Here is an example of getting the API info from the endpoint:
 var blogAPIInfo = wpAPIInfoResource.get( {
 	_wp_json_nonce: wpAPIData.nonce
 } );
-
 ```
 
 A request for the current user data:
@@ -64,7 +62,6 @@ var currentUserInfo = wpAPIUserResource.get( {
 	id: wpAPIData.user_id,
 	_wp_json_nonce: wpAPIData.nonce
 } );
-
 ```
 
 ** If the user is not logged in, the request will recieve a `403 Forbidden` response.
