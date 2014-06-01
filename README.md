@@ -34,7 +34,7 @@ The first parameter designates what to support using a string - `angular-wp-api`
 
 The second parameter is the script dependency array. This is used to control where the script is enqueued, to ensure it has AngularJS and ngResource available, and that the script itself is available for your app.
 
-The third parameter is an optional array of data to be localized with the script.
+The third parameter is an optional array of data to be localized with the script in the `wpAPIData` object.
 
 ```
 add_theme_support( 'angular-wp-api',
