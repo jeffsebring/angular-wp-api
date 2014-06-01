@@ -19,43 +19,14 @@ window.wp = window.wp || {};
 wp.api = wp.api || angular.module( 'wp.api', [ 'ngResource' ] )
  
 	// Main API resource
-	.factory( 'wpAPIInfoResource', [ '$resource', function ( $resource ) {
+	.factory( 'wpAPIResource', [ '$resource', function ( $resource ) {
 
 		return $resource( 
-			wpAPIData.base,
+			wpAPIData.base + ':route',
 			{
 				get: {
-					isArray: false,
-					cache : true
+					isArray: false
 				}
 			}
 		 );
 	}])
-
-	// User resource
-	.factory( 'wpAPIUserResource', [ '$resource', function ( $resource ) {
-
-		return $resource( 
-			wpAPIData.base + '/users/:id',
-			{
-				get: {
-					isArray: false,
-					cache : true
-				}
-			}
-		);
-	}])
-
-	// Post resource
-	.factory( 'wpAPIPostResource', [ '$resource', function ( $resource ) {
-
-		return $resource( 
-			wpAPIData.base + '/posts/:id',
-			{
-				get: {
-					isArray: false,
-					cache : true
-				}
-			}
-		);
-	}]);
