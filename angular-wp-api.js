@@ -44,4 +44,18 @@ wp.api = wp.api || angular.module( 'wp.api', [ 'ngResource' ] )
 				}
 			}
 		);
+	}])
+
+	// Post resource
+	.factory( 'wpAPIPostResource', [ '$resource', function ( $resource ) {
+
+		return $resource( 
+			wpAPIData.base + '/posts/:id',
+			{
+				get: {
+					isArray: false,
+					cache : true
+				}
+			}
+		);
 	}]);

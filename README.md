@@ -31,7 +31,7 @@ There are 2 methods of using this script. You can use the provided plugin, or bu
 
 ### Set theme support
 
-To include the script using the plugin, you'll just add a snippet to your theme or plugin which will use it.
+To include the script using the plugin, you'll just add a snippet to the theme or plugin containing your app.
 
 There is one required parameter, and 2 optional configuration parameters. Here is the minimal code to enable the script:
 
@@ -76,7 +76,7 @@ angular.module( 'myApp', [ 'wp.api' ] );
 
 ### Local Data
 
-The resources rely on localized data injected into the footer of the page, with the name of `wpAPIData`. By default, there are three parameters it provides, which allow access to the rest of WP-API.
+The resources rely on localized data injected into the footer of the page, with the name of `wpAPIData`. By default, there are three values it provides, which allow access to the rest of WP-API.
 
 * `base`: JSON API url, provided by the `json_url()` function.
 * `nonce`: JSON API nonce sent with requests, and used for authorization.
