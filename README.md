@@ -123,13 +123,25 @@ wpAPIResource.query( {
 Creating a new post draft:
 
 ```javascript
-wpAPIResource.query( {
+wpAPIResource.save( {
 	param1: 'posts'
 },
 {
-	title: 'only a test',
+	title: 'Only a Test',
 	slug: 'a-test',
-	content: 'this is content'
+	content: 'This is test content.'
+} );
+```
+
+Updating a post title:
+
+```javascript
+wpAPIResource.save( {
+	param1: 'posts',
+	param2: 1
+},
+{
+	title: 'Hi World!'
 } );
 ```
 
