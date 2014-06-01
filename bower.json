@@ -1,7 +1,0 @@
-{
-  "name": "angular-wp-api",
-  "dependencies": {
-    "angular": ">=1.2.16",
-    "main": "./angular-wp-api.js",
-  }
-}
