@@ -67,7 +67,7 @@ function angular_wp_api_scripts() {
 
 }
 
-// Hook `angular_wp_api_scripts` the `wp_enqueue_scripts` action
+// Hook `angular_wp_api_scripts` to the `wp_enqueue_scripts` action
 add_action( 'wp_enqueue_scripts', 'angular_wp_api_scripts' );
 
 endif;
