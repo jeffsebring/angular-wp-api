@@ -146,6 +146,19 @@ wpAPIResource.query( {
 } );
 ```
 
+Creating a new post draft:
+
+```javascript
+wpAPIResource.query( {
+	param1: 'posts'
+},
+{
+	title: 'only a test',
+	slug: 'a-test',
+	content: 'this is content'
+} );
+```
+
 The ngResource method `.get()`, should be used for requesting single objects/entities, as it expects an object to be returned. When requesting a loop/collection, use `query()`, which expects an array.
 
 
