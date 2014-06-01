@@ -10,6 +10,10 @@
 
 defined( 'ABSPATH' ) || die;
 
+// Leave if WP-API is not activated
+if ( ! defined( 'JSON_API_VERSION' ) )
+	return;
+
 if ( ! function_exists( 'angular_wp_api_scripts' ) ) :
 
 /**
@@ -17,12 +21,14 @@ if ( ! function_exists( 'angular_wp_api_scripts' ) ) :
  */
 function angular_wp_api_scripts() {
 
-	// quit if not specifically requested from the theme or a plugin
+	// Leave if not specifically requested from the theme or a plugin
 	if ( ! $config = get_theme_support( 'angular-wp-api' ) )
 		return;
 
-	// Array of dependencies for the
+	// Array of dependencies
 	$script_dependencies = null;
+
+	// Data for localization
 	$script_data = null;
 
 	// Script dependency from theme support
