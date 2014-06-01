@@ -50,7 +50,7 @@ function angular_wp_api_scripts() {
 	else
 		$script_data[ 'user_id' ] = 0;
 
-	// Enqueue the script after dependecy, in the footer
+	// Enqueue the script after dependency, in the footer
 	wp_enqueue_script( 'angular-wp-api',
 		plugins_url( 'angular-wp-api.min.js', __FILE__ ),
 		apply_filters( 'angular_wp_api_script_dependencies', $script_dependencies ),
