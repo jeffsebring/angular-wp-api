@@ -35,7 +35,6 @@ To provide access to API resources, include `wp.api` in the dependency array of 
 angular.module( 'myApp', [ 'wp.api' ] );
 ```
 
-
 ### Local Data
 
 The resources rely on localized data injected into the footer of the page, with the name of `wpAPIData`. By default, there are three parameters it provides, which allow access to the rest of WP-API.
@@ -46,11 +45,11 @@ The resources rely on localized data injected into the footer of the page, with 
 
 ### Getting Data
 
-Here is an example of getting the API info from the endpoint:
+This is an example of requesting base API information:
 
 
 ```javascript
-var blogAPIInfo = wpAPIInfoResource.get( {
+wpAPIInfoResource.get( {
 	_wp_json_nonce: wpAPIData.nonce
 } );
 ```
@@ -58,7 +57,7 @@ var blogAPIInfo = wpAPIInfoResource.get( {
 A request for the current user data:
 
 ```javascript
-var currentUserInfo = wpAPIUserResource.get( {
+wpAPIUserResource.get( {
 	id: wpAPIData.user_id,
 	_wp_json_nonce: wpAPIData.nonce
 } );
