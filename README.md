@@ -25,11 +25,11 @@ Aside from AngularJS, this module relies on [ngResource](https://github.com/angu
 You will need to [enqueue](http://codex.wordpress.org/Function_Reference/wp_enqueue_script) AngularJS in your theme or plugin, and have the WP-API plugin activated.
 
 
-## Use
+## Inclusion
+
+There are 2 methods of using this script. You can use the provided plugin, or bundle it with your app.
 
 ### Set theme support
-
-** You can skip this if you are bundling the script with your app using grunt or other methods. 
 
 To include the script using the plugin, you'll just add a snippet to your theme or plugin which will use it.
 
@@ -57,8 +57,14 @@ add_theme_support( 'angular-wp-api',
 );
 ```
 
-Now that you have set the dependency of the angular-wp-api script, add `angular-wp-api` as a dependency of your app scripts.
+Now that you have set the dependency of the angular-wp-api script, add `angular-wp-api` as a dependency of your app scripts to make sure it is accessable. If you get error messages in the console about missing objects, check this.
 
+### Bundling
+
+If you would like to include the module in your scripts for concatentation with grunt or otherwise, you'll need to localize some data from within WordPress. See the `plugin.php` file for an example.
+
+
+### Use
 
 ### `wp.api` in your Modules
 
