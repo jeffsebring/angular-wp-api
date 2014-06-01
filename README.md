@@ -31,7 +31,7 @@ Aside from AngularJS, this module relies on [ngResource](https://github.com/angu
 
 To provide access to API resources, include `wp.api` in the dependency array of your module definition.
 
-```
+```javascript
 angular.module( 'myApp', [ 'wp.api' ] );
 
 ```
@@ -43,31 +43,27 @@ The resources rely on localized data injected into the footer of the page, with 
 
 * `base`: JSON API url, provided by the `json_url()` function.
 * `nonce`: JSON API nonce sent with requests, and used for authorization.
-* `user_id`: 
+* `user_id`: Current user ID if logged in. Users not logged will have an ID of 0 for utility.
 
 ### Getting Data
 
 Here is an example of getting the API info from the endpoint:
 
 
-```
-
+```javascript
 var blogAPIInfo = wpAPIInfoResource.get( {
 	_wp_json_nonce: wpAPIData.nonce
 } );
-
 
 ```
 
 A request for the current user data:
 
-```
-
+```javascript
 var currentUserInfo = wpAPIUserResource.get( {
 	id: wpAPIData.user_id,
 	_wp_json_nonce: wpAPIData.nonce
 } );
-
 
 ```
 
