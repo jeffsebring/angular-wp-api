@@ -90,9 +90,7 @@ Additional parameters are added to the query string by ngResource.
 This is an example of requesting base API information:
 
 ```javascript
-wpAPIResource.get( {
-	_wp_json_nonce: wpAPIData.nonce
-} );
+wpAPIResource.get();
 ```
 
 A request for the current user data:
@@ -100,8 +98,7 @@ A request for the current user data:
 ```javascript
 wpAPIResource.get( {
 	param1: 'users',
-	param2: wpAPIData.user_ud,
-	_wp_json_nonce: wpAPIData.nonce
+	param2: wpAPIData.user_id
 } );
 ```
 ** If the user is not logged in, the request will recieve a `403 Forbidden` response.
@@ -111,16 +108,14 @@ A single post request:
 ```javascript
 wpAPIResource.get( {
 	param1: 'posts',
-	param2: 1,
-	_wp_json_nonce: wpAPIData.nonce
+	param2: 1
 } );
 ```
 A post loop request:
 
 ```javascript
 wpAPIResource.query( {
-	param1: 'posts',
-	_wp_json_nonce: wpAPIData.nonce
+	param1: 'posts'
 } );
 ```
 A post loop request for page 3 of posts:
@@ -128,8 +123,7 @@ A post loop request for page 3 of posts:
 ```javascript
 wpAPIResource.query( {
 	param1: 'posts',
-	page: 3,
-	_wp_json_nonce: wpAPIData.nonce
+	page: 3
 } );
 ```
 
@@ -138,8 +132,7 @@ A request for registered post types:
 ```javascript
 wpAPIResource.query( {
 	param1: 'posts',
-	param2: 'types',
-	_wp_json_nonce: wpAPIData.nonce
+	param2: 'types'
 } );
 ```
 
@@ -149,8 +142,7 @@ A request for data about the attachment post type:
 wpAPIResource.query( {
 	param1: 'posts',
 	param2: 'types',
-	param3: 'attachment',
-	_wp_json_nonce: wpAPIData.nonce
+	param3: 'attachment'
 } );
 ```
 

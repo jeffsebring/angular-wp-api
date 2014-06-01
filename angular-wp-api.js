@@ -22,7 +22,10 @@ wp.api = wp.api || angular.module( 'wp.api', [ 'ngResource' ] )
 	.factory( 'wpAPIResource', [ '$resource', function ( $resource ) {
 
 		return $resource( 
-			wpAPIData.base + '/:param1/:param2/:param3/:param4/:param5/:param6/:param7/'
+			wpAPIData.base + '/:param1/:param2/:param3/:param4/:param5/:param6/:param7/',
+			{
+				_wp_json_nonce: wpAPIData.nonce
+			}
 		);
 
 	}]);
