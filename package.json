@@ -1,6 +1,11 @@
 {
   "name": "angular-wp-api",
   "version": "0.0.1-alpha1",
+  "scripts": {
+    "postinstall": "grunt",
+    "build": "grunt",
+    "watch": "grunt watch"
+  },
   "devDependencies": {
     "bower": "~1.3.3",
     "grunt": "~0.4.2",
