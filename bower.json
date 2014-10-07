@@ -1,0 +1,23 @@
+{
+  "name": "angular-wp-api",
+  "main": "angular-wp-api.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jeffsebring/angular-wp-api",
+  "authors": [
+    "Jeff Sebring <jeff@jeffsebring.com>"
+  ],
+  "description": "AngularJS Module for WP-API",
+  "keywords": [
+    "AngularJS",
+    "WordPress",
+    "WP-API"
+  ],
+  "license": "GPLv3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
