@@ -50,7 +50,7 @@ add_theme_support( 'angular-wp-api',
 
 Script dependencies and localized data can also be modified with the `angular_wp_api_script_dependencies` and `angular_wp_api_local_data` filters, respectively.
 
-Now that you have set the dependency of the angular-wp-api script, add `wp.api` as a dependency of your app scripts to make sure it is accessable. If you get error messages in the console about missing objects, check this.
+Now that you have set the dependency of the angular-wp-api script, add `wp.api` as a dependency of your app scripts to make sure it is accessible. If you get error messages in the console about missing objects, check this.
 
 ### Bundling
 
@@ -101,7 +101,7 @@ wpAPIResource.get( {
 	param2: wpAPIData.user_id
 } );
 ```
-** If the user is not logged in, the request will recieve a `403 Forbidden` response.
+** If the user is not logged in, the request will receive a `403 Forbidden` response.
 
 A single post request:
 
